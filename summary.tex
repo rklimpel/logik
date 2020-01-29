@@ -1,0 +1,68 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{todonotes}
+\usepackage{xcolor}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\title{Zusammenfassung: Logik für die Informatik }
+\author{Rico Klimpel}
+\date{\today}
+
+\begin{document}
+    \maketitle   
+    \tableofcontents
+    \newpage
+
+    \setcounter{page}{1}
+
+    \section*{Informationen}
+    Zusammenfassung der Vorlesung Logik für die Informatik an der CAU Kiel aus dem Wintersemester 2019/2020, gehalten von Prof. Dr. Thomas Wilke. Ein Versuch die wichtigsten Aussagen ohne enorm lange Formalitäten drum herum knapp zu Papier zu bringen. Kein Anspruch auf Vollständigkeit. Geschrieben in \LaTeX.
+
+    \part{Aussagenlogik}
+    Hier kommt alles zur Aussagenlogik rein.\\
+    Ja\\
+    Stimmt\\
+    Schon ganz viel hier!
+
+    \newpage
+    \part{Prädikatenlogik}
+
+    \section{S-Signatur}
+
+    Eine Signatur $\mathcal S$ besteht aus eine Menge $S$ von Symbolen und einer Funktion $\Sigma \colon S \to \mathbf N \cup \mathbf N \times \{1\}$.\\
+    The Elemente von $S$ werden Symbole genannt und wie folgt eingeteilt:
+    \begin{itemize}
+        \item Ein Symbol $f$ mit $\Sigma(f) = \langle n, 1\rangle$ für $n > 0$ ist eine Funktionssymbol.\\
+        Menge dieser Symbole: $\mathcal F_\Sigma$ oder einfach $\mathcal F$.
+        \item Ein Symbol $R$ mit $\Sigma(R) = n$ für $n > 0$ ist ein Relationssymbol.\\
+        Menge dieser Symbole: $\mathcal R_\Sigma$ oder $\mathcal R$.
+        \item Ein Symbol $c$ mit $\Sigma(c) = \langle 0,1\rangle$ ist ein Symbol für eine Konstante.\\
+        Menge dieser Symbole: $\mathcal C_\Sigma$ oder $\mathcal C$.
+        \item Symbol $b$ mit $\Sigma(b) = 0$ ist ein Symbol für einen boolschen Wert. \\
+        Menge dieser Symbole: $\mathcal B_\Sigma$ or simply $\mathcal B$.
+    \end{itemize}
+    Im allgemeinen werden Signaturen mit $\mathcal B \neq \emptyset$ ignoriert (Signaturen ohne boolsche Werte).\\\\
+    Beispiele:
+    \begin{align*}
+        S &= \{\text{zero}, \text{one}, \text{add}, \text{mult}\}\\
+        \Sigma &= \{\text{zero} \mapsto \langle 0,1\rangle, \text{one} \mapsto \langle 0,1\rangle, \text{add} \mapsto \langle 2,1\rangle, \text{mult} \mapsto \langle 2,1\rangle\}
+    \end{align*}
+   Vereinfacht aufgeschrieben:
+    \begin{align*}
+        \mathcal S &= \{\text{zero}, \text{one}, \text{add}/\!/2, \text{mult}/\!/2\}
+    \end{align*}
+    
+
+\end{document}
