@@ -6,6 +6,7 @@
 \usepackage{todonotes}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{stmaryrd}
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
 \hypersetup{
@@ -114,9 +115,20 @@
 
     \subsection{Interpretation von Termen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Semantics_of_first-order_logic#Interpretation_of_terms}\\\\
+    Sei $\mathcal S$ eine Signatur und $\mathcal A$ eine $\mathcal S$-Struktur. Für eine Belegung ($A$-Belegung) $\beta$, ist der Wert von jedem  $\mathcal S$-term $t$ in $\mathcal A$ unter $\beta$: $\llbracket t\rrbracket_\beta^\mathcal A$ defniert durch folgender Induktion.
+    Basiselemente:
+    \begin{itemize}
+        \item Für alle $i \in \mathbb{N}$ gilt: $\llbracket x_i\rrbracket_\beta^\mathcal A = \beta(x_i)$.
+        \item Für jedes $c \in C$ gilt: $\llbracket c\rrbracket_\beta^\mathcal A = c^{\mathcal A}$
+    \end{itemize}
+    Induktionsregel:
+    \begin{itemize}
+        \item Für alle $f/\!/n \in \mathcal F$ und die $\mathcal S$-terms $t_0, \dots, t_{n-1}$ gilt: $\llbracket f(t_0, \dots, t_{n-1})\rrbracket_\beta^\mathcal A = f^\mathcal A(\llbracket t_0\rrbracket_\beta^\mathcal A, \dots, \llbracket t_{n-1}\rrbracket_\beta^\mathcal A)$
+    \end{itemize}
 
     \subsection{Interpretation von Formlen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Semantics_of_first-order_logic#Interpretation_of_formulas}\\\\
+
 
     \subsection{Freie Variablen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Free_variables}\\\\
