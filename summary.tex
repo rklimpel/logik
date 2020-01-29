@@ -83,16 +83,34 @@
     \end{align*}
 
     \subsection{Terme}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Syntax_of_first-order_logic}\\\\
+    \url{https://lili.informatik.uni-kiel.de/llocs/Syntax_of_first-order_logic#Formal_definition_of_terms}\\\\
     Induktive Defintion für alle Terme über eine Signatur $\mathcal{S}$, die auch $\mathcal{S}$-terms genannt wird:
     Basiselemente:\\
     \begin{itemize}
         \item Ein Baum mit nur einem Element das eine Variable der Prädikatenlogik enthält ist ein $\mathcal{S}$-term.
         \item Ein Baum mit nur einem Element das eine Konstante $c \in \mathcal{S}$ enthält ist ein $\mathcal{S}$-term.
     \end{itemize}
+    Diese werden die atomaren $\mathcal{S}$-terme genannt.
+    Induktionsregeln:\\
+    \begin{itemize}
+        \item Wenn  $f/\!/n \in \mathcal S$ eine Funktion und $t_0, \dots, t_{n-1}$ $\mathcal S$-terms sind, dann ist der Baum mit der Wurzel $f$ und den $n$ Teilbäumen $t_0$, ..., $t_{n-1}$ ein $\mathcal S$-term.
+    \end{itemize}
 
     \subsection{Formeln}
-    \url{---}\\
+    \url{https://lili.informatik.uni-kiel.de/llocs/Syntax_of_first-order_logic#Formal_definition_of_formulas}\\\\
+    Induktive Defintion für alle Formeln über eine Signatur $\mathcal{S}$, die auch $\mathcal{S}$-formulas genannt wird:
+    Basiselemente:\\
+    \begin{itemize}
+        \item Der einelementige Baum in dem das einzige Element eines der konstanten Symbole $\top$ oder $\bot$ ist, ist eine (prädikatenlogische) Formel.
+        \item Wenn $t_0,t_1$ Terme sind, dann ist der Baum mit der Wurzel $\doteq$ und den Teilbäumen $t_0$ und $t_1$ eine Formel.
+        \item Wenn $R/n \in \mathcal S$ eine Relation ist und $t_0,\dots,t_{n-1}$ Terme sind dann ist der Baum mit der Wurzel $R$ und den $n$ Teilbäumenm $t_0, \dots, t_{n-1}$ eine Formel.
+    \end{itemize}
+    Diese werden die atomaren Formeln genannt.
+    Induktionsregeln:\\
+    \begin{itemize}
+        \item Wenn $C$ ein $n$-stelliger Junktor ist und $\varphi_0,\dots,\varphi_{n-1}$ Formeln sind, dann ist der Baum mit der Wurzel $C$ und den $n$ Teilbäumen $\varphi_0,\dots,\varphi_{n-1}$ eine Formel.
+        \item Wenn $x_i$ eine Variable ist und $\varphi$ eine Formel, dann ist der Baum mit der Wurzel $\exists x_i$ oder der Wurzel $\forall x_i$ und dem Teilbaum $\varphi$ eine Formel.
+    \end{itemize}
 
     \subsection{Interpretation von Termen}
     \url{---}\\
