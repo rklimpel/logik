@@ -23,25 +23,25 @@
 \begin{document}
     \maketitle   
     \tableofcontents
-    \newpage
 
     \setcounter{page}{1}
 
     \section*{Informationen}
     Zusammenfassung der Vorlesung Logik für die Informatik an der CAU Kiel aus dem Wintersemester 2019/2020, gehalten von Prof. Dr. Thomas Wilke. Ein Versuch die wichtigsten Aussagen ohne enorm lange Formalitäten drum herum knapp zu Papier zu bringen. Kein Anspruch auf Vollständigkeit. Geschrieben in \LaTeX.
 
-    \part{Aussagenlogik}
-    Hier kommt alles zur Aussagenlogik rein.\\
-    Ja\\
-    Stimmt\\
-    Schon ganz viel hier!
+    \clearpage
 
-    \newpage
+    \part{Aussagenlogik}
+    
+
+    \clearpage
     \part{Prädikatenlogik}
 
-    \section{S-Signatur}
+    \section{Syntax \& Semantik}
 
-    Eine Signatur $\mathcal S$ besteht aus eine Menge $S$ von Symbolen und einer Funktion $\Sigma \colon S \to \mathbf N \cup \mathbf N \times \{1\}$.\\
+    \subsection{Signatur}
+
+    Eine Signatur $\mathcal S$ besteht aus eine Menge $S$ von Symbolen und einer Funktion $\Sigma \colon S \to \mathbb N \cup \mathbb N \times \{1\}$.\\
     The Elemente von $S$ werden Symbole genannt und wie folgt eingeteilt:
     \begin{itemize}
         \item Ein Symbol $f$ mit $\Sigma(f) = \langle n, 1\rangle$ für $n > 0$ ist eine Funktionssymbol.\\
@@ -53,16 +53,16 @@
         \item Symbol $b$ mit $\Sigma(b) = 0$ ist ein Symbol für einen boolschen Wert. \\
         Menge dieser Symbole: $\mathcal B_\Sigma$ or simply $\mathcal B$.
     \end{itemize}
-    Im allgemeinen werden Signaturen mit $\mathcal B \neq \emptyset$ ignoriert (Signaturen ohne boolsche Werte).\\\\
+    Im allgemeinen werden Signaturen mit $\mathcal B \neq \emptyset$ ignoriert (Signaturen ohne boolsche Werte). Keine Ahnung warum er das sagt.\\\\
     Beispiele:
     \begin{align*}
         S &= \{\text{zero}, \text{one}, \text{add}, \text{mult}\}\\
         \Sigma &= \{\text{zero} \mapsto \langle 0,1\rangle, \text{one} \mapsto \langle 0,1\rangle, \text{add} \mapsto \langle 2,1\rangle, \text{mult} \mapsto \langle 2,1\rangle\}
     \end{align*}
-   Vereinfacht aufgeschrieben:
+   Vereinfacht aufgeschrieben sieht das ganze so aus:
     $$\mathcal S = \{\text{zero}, \text{one}, \text{add}/\!/2, \text{mult}/\!/2\}$$
 
-    \section{S-Struktur}
+    \subsection{Struktur}
     Sei $\mathcal S$ eine Signatur. Eine $\mathcal S$-Struktur $\mathcal A$ besteht aus:
     \begin{itemize}
         \item Univserum $A$ mit $A \not= \emptyset$
@@ -79,6 +79,70 @@
         \text{mult}^\mathcal A(a,b) & = a + b \text{ rest } 4 && \text{for $a, b \in A$}\\
         \text{Lt}^\mathcal N & = \{\langle a, a\rangle \colon a \in A\}
     \end{align*}
+
+    \subsection{Terme}
+
+    \subsection{Formeln}
+
+    \subsection{Interpretation von Termen}
+
+    \subsection{Interpretation von Formlen}
+
+    \subsection{Freie Variablen}
+
+    \subsection{Koinzidenzlemma}
+
+    \section{Modelierung}
+
+    \subsection{Relationen in Strukturen defnieren?}
+
+    \subsection{Erfüllbarkeit einer Formel}
+
+    \section{Äquivalenz}
+
+    \subsection{Äquivalenz von Formeln}
+
+    \subsection{Regeln der Prädikatenlogik}
+
+    \subsection{Quantorenregeln}
+
+    \subsection{Umbenennen von gebundenen Variablen}
+
+    \subsection{Scope von Quantoren}
+
+    \subsection{Normalformen}
+
+    \subsubsection{Boolsche Normalform}
+
+    \subsubsection{Plenex Normalform}
+
+    \subsubsection{Konjunktive Normalform}
+
+    \section{Folgerungsbeziehungen (Entailment)}
+
+    \subsection{Folgerungsbeziehung}
+
+    \subsection{Beziehung zwischen Erfüllbarkeit und Folgerungsbeziehung}
+
+    \section{Beweissysteme}
+
+    \subsection{Natürliches Beweissystem}
+
+    \subsubsection{Beweisregeln}
+
+    \subsubsection{Korrektheit \& Vollständigkeit}
+
+    \subsection{Resolutionsbeweise}
+
+    \subsubsection{Korrektheit \& Vollständigkeit}
+
+    \subsubsection{Verbindung zwischen Resolution und Logik-Programmierung}
+
+    \section{Kompaktheit}
+
+
+
+
 
 
 \end{document}
