@@ -60,9 +60,25 @@
         \Sigma &= \{\text{zero} \mapsto \langle 0,1\rangle, \text{one} \mapsto \langle 0,1\rangle, \text{add} \mapsto \langle 2,1\rangle, \text{mult} \mapsto \langle 2,1\rangle\}
     \end{align*}
    Vereinfacht aufgeschrieben:
+    $$\mathcal S = \{\text{zero}, \text{one}, \text{add}/\!/2, \text{mult}/\!/2\}$$
+
+    \section{S-Struktur}
+    Sei $\mathcal S$ eine Signatur. Eine $\mathcal S$-Struktur $\mathcal A$ besteht aus:
+    \begin{itemize}
+        \item Univserum $A$ mit $A \not= \emptyset$
+        \item Für jedes Symbol eine Konstanten $c \in \mathcal{S}$ eine Interpretation $c^\mathcal A \in A$ von $c$.
+        \item Für jedes Funktionssymbol $f/\!/n \in \mathcal S$ eine Interpretation $f^\mathcal A \colon A^n \to A$
+        \item Für jedes Relationssymbol $R/n \in \mathcal S$ eine Interpretation $R^\mathcal A \subseteq A^n$
+    \end{itemize}
+    Hier ein Beispiel das ungefähr zu der Signatur oben passt:\\
     \begin{align*}
-        \mathcal S &= \{\text{zero}, \text{one}, \text{add}/\!/2, \text{mult}/\!/2\}
+        A & = \{0, 1, 2, 3\} \\
+        \text{zero}^\mathcal A & = 3\\
+        \text{one}^\mathcal A & = 2\\
+        \text{add}^\mathcal A(a,b) & = 0 && \text{for $a, b \in A$}\\
+        \text{mult}^\mathcal A(a,b) & = a + b \text{ rest } 4 && \text{for $a, b \in A$}\\
+        \text{Lt}^\mathcal N & = \{\langle a, a\rangle \colon a \in A\}
     \end{align*}
-    
+
 
 \end{document}
