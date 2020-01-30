@@ -118,8 +118,10 @@
     Sei $\mathcal S$ eine Signatur und $\mathcal A$ eine $\mathcal S$-Struktur. Für eine Belegung ($A$-Belegung) $\beta$, ist der Wert von jedem  $\mathcal S$-term $t$ in $\mathcal A$ unter $\beta$: $\llbracket t\rrbracket_\beta^\mathcal A$ defniert durch folgender Induktion.
     Basiselemente:
     \begin{itemize}
-        \item Für alle $i \in \mathbb{N}$ gilt: $\llbracket x_i\rrbracket_\beta^\mathcal A = \beta(x_i)$.
-        \item Für jedes $c \in C$ gilt: $\llbracket c\rrbracket_\beta^\mathcal A = c^{\mathcal A}$
+        \item Für alle $i \in \mathbb{N}$ gilt: $\llbracket x_i\rrbracket_\beta^\mathcal A = \beta(x_i)$.\\
+            Variablen bekommen den ihnen unter $\beta$ zugewiesenen Wert bei der alleinigen Auswertung.
+        \item Für jedes $c \in C$ gilt: $\llbracket c\rrbracket_\beta^\mathcal A = c^{\mathcal A}$\\
+            Konstante Symbole werden wie in der Struktur beschriegben ausgwertet wenn sie alleine stehen.
     \end{itemize}
     Induktionsregel:
     \begin{itemize}
@@ -128,7 +130,27 @@
 
     \subsection{Interpretation von Formlen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Semantics_of_first-order_logic#Interpretation_of_formulas}\\\\
-
+    So dieses mal einfach direkt die Induktive Definition:
+    Basiselemente:
+    \begin{itemize}
+        \item Für die boolschen konstannten Symbole gilt: 
+        \begin{align}
+            \llbracket \bot \rrbracket_\beta^\mathcal A & = 0\\ 
+            \llbracket \top \rrbracket_\beta^\mathcal A & = 1
+        \end{align}
+        \item Für alle Terme $t_0, t_1$ gilt: 
+        \begin{align}
+        \llbracket t_0 \doteq t_1 \rrbracket_\beta^\mathcal A = \begin{cases}1 & \text{if } \llbracket t_0 \rrbracket_\beta^\mathcal A = \llbracket t_1 \rrbracket_\beta^\mathcal A\\ 0 & \text{sonst}\end{cases} 
+        \end{align}
+        \item Für alle Relationen $R/n \in \mathcal R$ und Terme $t_0, \dots, t_{n-1}$ gilt:
+        \begin{align}
+        \llbracket R(t_0, \dots, t_n)\rrbracket = \begin{cases}1 & \text{if } \langle \llbracket t_0 \rrbracket_\beta^\mathcal A, \dots, \llbracket t_{n-1} \rrbracket_\beta^\mathcal A\rangle \in R^\mathcal A\\ 0 & \text{sonst}\end{cases} 
+        \end{align}
+    \end{itemize}
+    Induktionsregeln:
+    \begin{itemize}
+        \item blubb
+    \end{itemize}
 
     \subsection{Freie Variablen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Free_variables}\\\\
