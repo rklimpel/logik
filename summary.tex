@@ -16,7 +16,9 @@
     linkcolor=black,
     urlcolor=black
 }
+
 \renewcommand{\labelenumi}{(\roman{enumi})}
+\newcommand{\model}{\mathrel{{\vert}\!{\equiv}}}
 
 \title{Zusammenfassung: Logik für die Informatik }
 \author{Rico Klimpel}
@@ -149,8 +151,21 @@
     \end{itemize}
     Induktionsregeln:
     \begin{itemize}
-        \item blubb
+        \item Für jeden n-stelligen Junktor $C$ und die Formlen $\varpi_0,...,\varphi_{n-1}$ gilt:
+            $$ \llbracket C (\varphi_0,\dots,\varphi_{n-1})\rrbracket_{\beta}^{\mathcal A} = f_C(\llbracket \varphi_0 \rrbracket_{\beta}^{\mathcal A}, \dots,\llbracket \varphi_{n-1} \rrbracket_{\beta}^{\mathcal A}) $$
+        \item Für jede Formel $\varphi$ und $i \in \mathbb N$ gilt:
+            $$ \llbracket \exists x_i \varphi \rrbracket_{\beta}^{\mathcal A} = 
+            \begin{cases}
+                1 & \text{wenn ein } a \in A \text{ existiert,} \\ & \text{für das gilt } \llbracket \varphi \rrbracket_{\beta [\frac{x_i}{a}]}^{\mathcal A} = 1\\
+                0 & \text{sonst}
+            \end{cases}$$
+            $$ \llbracket \forall x_i \varphi \rrbracket_{\beta}^{\mathcal A} = 
+            \begin{cases}
+                1 & \text{wenn für alle } a \in A \text{ gilt:} \\ &  \llbracket \varphi \rrbracket_{\beta [\frac{x_i}{a}]}^{\mathcal A} = 1\\
+                0 & \text{sonst}
+            \end{cases}$$
     \end{itemize}
+    $ \llbracket \varphi \rrbracket_{\beta}^{\mathcal A} = 1$ wird auch als $\mathcal A, \beta \model \varphi$
 
     \subsection{Freie Variablen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Free_variables}\\\\
