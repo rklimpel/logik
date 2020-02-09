@@ -165,13 +165,29 @@
                 0 & \text{sonst}
             \end{cases}$$
     \end{itemize}
-    $ \llbracket \varphi \rrbracket_{\beta}^{\mathcal A} = 1$ wird auch als $\mathcal A, \beta \model \varphi$
+    $ \llbracket \varphi \rrbracket_{\beta}^{\mathcal A} = 1$ wird auch als $\mathcal A, \beta \model \varphi$ geschrieben und es heißt $\mathcal A$ zusammen mit $\beta$ ist ein Modell für $\varphi$. Dies gilt auch für eine Menge von Formeln $\phi$ mit $\mathcal A, \beta \model \phi$ ist dann gemeint das es ein Modell für alle Formeln der Menge ist.
 
     \subsection{Freie Variablen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Free_variables}\\\\
+    Freie Variablen sind genau die, deren Belegung für die Auswertung eiens Terms von relevanz sind. Auch die freien Variablen wurden Induktiv definiert, dabei ist $\mathcal S$ eine Signatur:\\\\
+
+    Basiselemente:
+    \begin{itemize}
+        \item $\text{fvars}(\top) = \emptyset$ und $\text{fvars}(\bot) = \emptyset$.
+        \item Für alle Terme $t_0$ und $t_1$, $\text{fvars}(t_0 \doteq t_1) = \text{vars}(t_0) \cup \text{vars}(t_1)$.
+        \item Für alle Relationssymbole $R/n \in \mathcal S$ und Terme $t_0, \dots, t_n$ gilt $\text{fvars}(R(t_0, \dots, t_{n-1})) = \bigcup_{i < n} \text{vars}(t_i)$.
+    \end{itemize}
+    Induktionsregeln:
+    \begin{itemize}
+        \item Für jeden $n$-stelligen Junktor $C$ und Formlen $\varphi_0, \dots, \varphi_{n-1}$ gilt $\text{fvars}(C(\varphi_0, \dots, \varphi_{n-1})) = \bigcup_{i < n} \text{fvars}(\varphi_i)$.
+        \item Für alle $i \in \mathbf N$ und alle Formeln $\varphi$ gilt $\text{fvars}(\exists x_i \varphi) = \text{fvars}(\varphi) \setminus \{x_i\}$ und $\text{fvars}(\forall x_i \varphi) = \text{fvars}(\varphi) \setminus \{x_i\}$.
+    \end{itemize}
 
     \subsection{Koinzidenzlemma}
     \url{https://lili.informatik.uni-kiel.de/llocs/Coincidence_lemma_(first-order_logic)}\\\\
+    Sei $\mathcal S$ eine Signatur, $\varphi$ eine Formel über $\mathcal S$, $\mathcal A$ eine $\mathcal S$-Struktur und $\beta_0$ und $\beta_1$ Belegungen für Variablen. Wenn $\beta_0\vert_{\text{fvars}(\varphi)} = \beta_1\vert_{\text{fvars}(\varphi)}$, dann gilt:
+    $$ \llbracket\varphi\rrbracket_{\beta_0} = \llbracket\varphi\rrbracket_{\beta_1}$$
+    Das heißt, das für die Auswertung einer Formel nur genau die Variablen von Relevanz sind, die auch in der Formel vorkommen, und zwei verschiedene Belegungen, die aber in genau den vorkommenden Variablen gleich sind. Auch beim Auswerten von $\varphi$ auf das gleiche Ergebnis kommen.
 
     \section{Modelierung}
 
