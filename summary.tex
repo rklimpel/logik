@@ -182,6 +182,7 @@
         \item Für jeden $n$-stelligen Junktor $C$ und Formlen $\varphi_0, \dots, \varphi_{n-1}$ gilt $\text{fvars}(C(\varphi_0, \dots, \varphi_{n-1})) = \bigcup_{i < n} \text{fvars}(\varphi_i)$.
         \item Für alle $i \in \mathbf N$ und alle Formeln $\varphi$ gilt $\text{fvars}(\exists x_i \varphi) = \text{fvars}(\varphi) \setminus \{x_i\}$ und $\text{fvars}(\forall x_i \varphi) = \text{fvars}(\varphi) \setminus \{x_i\}$.
     \end{itemize}
+    Freie Variablen sind demnoch genau die ganzen Variablen in einer Formel, die nicht durch ein $\forall$ oder $\exists$ in genau der Formel $\varphi$ dahinter gebunden sind.
 
     \subsection{Koinzidenzlemma}
     \url{https://lili.informatik.uni-kiel.de/llocs/Coincidence_lemma_(first-order_logic)}\\\\
@@ -195,29 +196,9 @@
     \url{https://lili.informatik.uni-kiel.de/llocs/Definable_relations}\\\\
 
     \subsection{Erfüllbarkeit einer Formel}
-    \url{---}\\
+    \url{https://lili.informatik.uni-kiel.de/llocs/Satisfiability_(first-order_logic)}\\
 
     \section{Äquivalenz}
-
-    \subsection{Äquivalenz von Formeln}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Formula_equivalence_(first-order_logic)}\\\\
-
-    \subsection{Regeln der Prädikatenlogik}
-    \url{---}\\
-
-    \subsection{Quantorenregeln}
-    \url{---}\\
-
-    \subsection{Umbenennen von gebundenen Variablen}
-    \url{---}\\
-
-    \subsection{Scope von Quantoren}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Scope_of_quantifiers_in_first-order_logic}\\\\
-
-    \subsection{Normalformen}
-
-    \subsubsection{Boolsche Normalform}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Boolean_normal_form_(first-order_logic)}\\\\
 
     \subsubsection{Plenex Normalform}
     \url{https://lili.informatik.uni-kiel.de/llocs/Prenex_normal_form}\\\\
@@ -227,8 +208,45 @@
 
     \section{Folgerungsbeziehungen (Entailment)}
 
-    \subsection{Folgerungsbeziehung}
+    \subsection{Folgerungsbeziehung}\subsection{Äquivalenz von Formeln}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Formula_equivalence_(first-order_logic)}\\\\
+
+    \subsection{Regeln der Prädikatenlogik}
     \url{---}\\
+
+    \subsection{Quantorenregeln}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Quantifier_laws}\\
+
+    \subsection{Umbenennen von gebundenen Variablen}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Quantifier_laws}\\
+    
+
+    \subsection{Scope von Quantoren}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Scope_of_quantifiers_in_first-order_logic}\\\\
+    Die Menge der freien Variablen im "scope" einer durch einen Quantor gebundenen Variablen $x_i$ einer prädikatenlogischen Formel $\varphi$ wird aufgeschrieben als $\text{scope}(x_i, \varphi)$ und ist über die folgende Induktion definiert:
+
+    Basiselemente:
+    \begin{itemize}
+        \item $\text{scope}(x_i, \bot) = \emptyset$ und $\text{scope}(x_i, \top) = \emptyset$.
+        \item $\text{scope}(x_i, R(t_0, \dots, t_{n-1})) = \emptyset$ für jedes $n$-stelliges Relationssymbol $R$ und die Terme $t_0, \dots, t_{n-1}$.
+        \item $\text{scope}(x_i, t_0 \doteq t_1) = \emptyset$ für alle Terme $t_0$ und $t_1$.
+    \end{itemize}
+    Anders gesagt: $\text{scope}(x_i, \varphi) = \emptyset$ für jede atomare Formel $\varphi$.\\
+
+    Induktionsregeln:
+    \begin{itemize}
+        \item $\text{scope}(x_i, C(\varphi_0, \dots, \varphi_{n-1})) = \bigcup_{i<n} \text{scope}(x_i, \varphi_j)$ für jeden $n$-stelligen Junktor $C$ und alle Formeln $\varphi_0, \dots, \varphi_{n-1}$.\\\\
+            Das heißt wenn man scope auf einen Junktor aufruft, so betrachtet man alle Formeln die in dem Junktor vorkommen und ruft auf diese scope auf.
+        \item 
+            Dies ist der entscheidende Teil:\\
+            $\text{scope}(x_i, Q x_j \varphi) = \begin{cases}\text{fvars}(\varphi) \setminus \{x_i\} & \text{if $i = j$}\\ \text{scope}(x_i, \varphi) \setminus \{x_j\} & \text{sonst}\end{cases}$ für $Q \in \{\exists, \forall\}$ und die Formel $\varphi$.\\
+            Das heißt: Ruft man scope auf einen Quantoren $\exists$ oder $\forall$ auf, so 
+            
+    \end{itemize}
+    
+    \subsection{Normalformen}
+    \subsubsection{Boolsche Normalform}
+    \url{https://lili.informatik.uni-kie}\\
 
     \subsection{Beziehung zwischen Erfüllbarkeit und Folgerungsbeziehung}
     \url{---}\\
@@ -257,8 +275,16 @@
     \url{---}\\
 
 
-
-
-
+    \section{Klausuraufgabentypen}
+    Prädikatenlogik:
+    \begin{itemize}
+        \item Ankreuzaufgaben richtig/falsch
+        \item Angeben ob Formeln erfüllbar/unerfüllbar/allgmeingültig (mit Beweis)
+        \item Formeln für bestimmte Problemstellungen angeben
+        \item Äquivalenz von Formeln Beweisen/Widerlegen
+        \item Modell für erfüllbare Formlen angeben
+        \item Natürlicher Beweis für Allgmeingültigkeit
+        \item Resultionsbeweis für Folgerungsbeziehung
+    \end{itemize}
 
 \end{document}
