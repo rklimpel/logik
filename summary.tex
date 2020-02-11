@@ -220,6 +220,12 @@
     \subsection{Umbenennen von gebundenen Variablen}
     \url{https://lili.informatik.uni-kiel.de/llocs/Quantifier_laws}\\
     
+    \subsection{Namenskonflikte}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Term_substitution_and_substitution_lemma#Substitution_lemma}\\
+    Sei $\varphi$ eine prädikatenlogische Formel und  $\sigma$ eine Term Substitution. Es gibt einen Namenskonflikt in $\varphi$ für $\sigma$ wenn ein $x_i \in \text{dom}(\sigma)$ existiert und $x_j \in \text{vars}(\sigma(x_i))$ so dass $x_i \in \text{scope}(x_j, \varphi)$.\\
+    Das bedeutet: Die Domain einer Termsubstitution sind genau die Variablen die durch die Substitution ersetzt werden sollen. Wenn nun in der Formel genau im Scope einer Variablen aus dieser Domain die gleiche Variable (ungebunden) auftraucht, wie auch in dem ersetzten Teil der Substitution vorkommt Dann ist es ein Namenskonflikt. Immer noch zu kompliziert? Dann hilft vielleicht nochmal die Vereinfachte Formel:
+    $$ \exists x_i \in \text{dom}(\sigma) \exists x_j \in \text{vars}(\sigma (x_i)): x_i \in \text{scope}(x_j,\varphi)$$
+    Dann ist da ein Namenskonflikt.
 
     \subsection{Scope von Quantoren}
     \url{https://lili.informatik.uni-kiel.de/llocs/Scope_of_quantifiers_in_first-order_logic}\\\\
@@ -231,7 +237,7 @@
         \item $\text{scope}(x_i, R(t_0, \dots, t_{n-1})) = \emptyset$ für jedes $n$-stelliges Relationssymbol $R$ und die Terme $t_0, \dots, t_{n-1}$.
         \item $\text{scope}(x_i, t_0 \doteq t_1) = \emptyset$ für alle Terme $t_0$ und $t_1$.
     \end{itemize}
-    Anders gesagt: $\text{scope}(x_i, \varphi) = \emptyset$ für jede atomare Formel $\varphi$.\\
+    Anders gesagt: $\text{scope}(x_i, \varphi) = \emptyset$ für jede atomare Formel $\varphi$. Nicht kompliziert.\\
 
     Induktionsregeln:
     \begin{itemize}
@@ -240,8 +246,7 @@
         \item 
             Dies ist der entscheidende Teil:\\
             $\text{scope}(x_i, Q x_j \varphi) = \begin{cases}\text{fvars}(\varphi) \setminus \{x_i\} & \text{if $i = j$}\\ \text{scope}(x_i, \varphi) \setminus \{x_j\} & \text{sonst}\end{cases}$ für $Q \in \{\exists, \forall\}$ und die Formel $\varphi$.\\
-            Das heißt: Ruft man scope auf einen Quantoren $\exists$ oder $\forall$ auf, so 
-            
+            Das heißt: Ruft man scope auf einen Quantoren $\exists$ oder $\forall$ auf, so enstpricht scope genau dann den freien Variablen der Formel hinter dem Quantor, wenn die in der Scope Funktion angegeben Variable der vor dem Quantor entspricht. Ansonsten rufen wir auf die Formel die zu dem Quantor gehört erneut scope auf, lassen aber die durch den Quantor gebundene Variable außenvor.  
     \end{itemize}
     
     \subsection{Normalformen}
