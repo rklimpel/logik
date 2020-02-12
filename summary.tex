@@ -8,6 +8,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{stmaryrd}
+\usepackage{tcolorbox}
+\usepackage{multicol}
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
 \hypersetup{
@@ -87,6 +89,9 @@
     \end{align*}
 
     \subsection{Terme}
+    \begin{tcolorbox}
+        Ein Term ist jede Struktur, die Grundlegend nur durch Variablen oder Konstanten aufgebaut ist und durch Funktionen verknüpft ist.
+    \end{tcolorbox}
     \url{https://lili.informatik.uni-kiel.de/llocs/Syntax_of_first-order_logic#Formal_definition_of_terms}\\\\
     Induktive Defintion für alle Terme über eine Signatur $\mathcal{S}$, die auch $\mathcal{S}$-terms genannt wird:
     Basiselemente:\\
@@ -101,6 +106,9 @@
     \end{itemize}
 
     \subsection{Formeln}
+    \begin{tcolorbox}
+    Eine Formel ist jede Struktur, die nur duch die Basiselemente $\top$ oder $\bot$, durch $\doteq$ verknüpfte Terme oder eine Relationen mit Termen drin aufgebaut ist oder die durch einen Junktor verknüpft mehrere Formeln enthält oder ein $\exists$ oder $\forall$ vor einer Formel steht.
+    \end{tcolorbox}
     \url{https://lili.informatik.uni-kiel.de/llocs/Syntax_of_first-order_logic#Formal_definition_of_formulas}\\\\
     Induktive Defintion für alle Formeln über eine Signatur $\mathcal{S}$, die auch $\mathcal{S}$-formulas genannt wird:
     Basiselemente:\\
@@ -197,14 +205,17 @@
     \url{https://lili.informatik.uni-kiel.de/llocs/Definable_relations}\\\\
 
     \subsection{Erfüllbarkeit einer Formel}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Satisfiability_(first-order_logic)}\\
+    \url{https://lili.informatik.uni-kiel.de/llocs/Satisfiability_(first-order_logic)}\\\\
 
     \section{Äquivalenz}
 
     \subsection{Normalformen}
 
     \subsubsection{Boolsche Normalform}
-    \url{https://lili.informatik.uni-kiel.de/llocs/Boolean_normal_form_(first-order_logic)}\\
+    \begin{tcolorbox}
+        Eine prädikatenlogische Formel ist in BNF, falls sie nur aus den Junktoren $\neg,\wedge,\vee$ und den Quantoren $\exists,\forall$ aufgbaut ist.
+    \end{tcolorbox}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Boolean_normal_form_(first-order_logic)}
 
     \subsubsection{Plenex Normalform}
     \url{https://lili.informatik.uni-kiel.de/llocs/Prenex_normal_form}\\\\
@@ -284,7 +295,7 @@
     \section{Kompaktheit}
     \url{---}\\
 
-    \section{Klausuraufgabentypen}
+    \section{Klausuraufgabentypen \& Begriffssammlung}
 
     \subsection{Aussagenlogik}
     \begin{itemize}
@@ -302,5 +313,42 @@
         \item Natürlicher Beweis für Allgmeingültigkeit
         \item Resultionsbeweis für Folgerungsbeziehung
     \end{itemize}
+
+    \subsection{Begriffe}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Signatur
+            \item Struktur
+            \item Term
+            \item Formel
+            \item Relation
+            \item BNF
+            \item KNF
+            \item PNF
+            \item Resultionsbeweis
+            \item Natürlicher Beweis
+            \item Skolemisierung
+            \item Unifikation
+            \item allgemeinster Unifikator
+            \item Vollständigkeit und Korrektheit
+            \item Freie Variablen
+            \item Scope
+            \item Namenskonflikte
+            \item Domain
+            \item Quantoren / Quantorengesetze
+            \item Junktoren
+            \item Substitution
+            \item Äquivalenz
+            \item Koinzidenzlemma
+            \item Folgerung
+            \item Model
+            \item Belegung
+            \item Kongruenzlemma
+            \item Interpretation von Termen/Formeln
+            \item Erfüllbarkeit
+            \item Allgmeingültigkeit
+        \end{itemize}
+    \end{multicols}
+    
 
 \end{document}
