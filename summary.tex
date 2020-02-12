@@ -1,11 +1,12 @@
-\documentclass[twocolumn]{article}
+\documentclass{article}
 
-\usepackage[margin=1.2cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{todonotes}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{graphicx}
 \usepackage{stmaryrd}
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
@@ -200,6 +201,11 @@
 
     \section{Äquivalenz}
 
+    \subsection{Normalformen}
+
+    \subsubsection{Boolsche Normalform}
+    \url{https://lili.informatik.uni-kiel.de/llocs/Boolean_normal_form_(first-order_logic)}\\
+
     \subsubsection{Plenex Normalform}
     \url{https://lili.informatik.uni-kiel.de/llocs/Prenex_normal_form}\\\\
 
@@ -248,10 +254,6 @@
             $\text{scope}(x_i, Q x_j \varphi) = \begin{cases}\text{fvars}(\varphi) \setminus \{x_i\} & \text{if $i = j$}\\ \text{scope}(x_i, \varphi) \setminus \{x_j\} & \text{sonst}\end{cases}$ für $Q \in \{\exists, \forall\}$ und die Formel $\varphi$.\\
             Das heißt: Ruft man scope auf einen Quantoren $\exists$ oder $\forall$ auf, so enstpricht scope genau dann den freien Variablen der Formel hinter dem Quantor, wenn die in der Scope Funktion angegeben Variable der vor dem Quantor entspricht. Ansonsten rufen wir auf die Formel die zu dem Quantor gehört erneut scope auf, lassen aber die durch den Quantor gebundene Variable außenvor.  
     \end{itemize}
-    
-    \subsection{Normalformen}
-    \subsubsection{Boolsche Normalform}
-    \url{https://lili.informatik.uni-kie}\\
 
     \subsection{Beziehung zwischen Erfüllbarkeit und Folgerungsbeziehung}
     \url{---}\\
@@ -262,7 +264,10 @@
     \url{---}\\
 
     \subsubsection{Beweisregeln}
-    \url{---}\\
+    \url{https://lili.informatik.uni-kiel.de/llocs/Natural_proof_system_(propositional_logic)#Proof_rules}\\\\
+    \url{https://logic4free.informatik.uni-kiel.de/llocs/Natural_proof_system_(first-order_logic)#Proof_rules}\\
+    \includegraphics[scale=0.65]{beweisregelnaussagenlogik}\\
+    \includegraphics[scale=0.9]{beweisregelnpraedikatenlogik}
 
     \subsubsection{Korrektheit \& Vollständigkeit}
     \url{---}\\
@@ -279,9 +284,15 @@
     \section{Kompaktheit}
     \url{---}\\
 
-
     \section{Klausuraufgabentypen}
-    Prädikatenlogik:
+
+    \subsection{Aussagenlogik}
+    \begin{itemize}
+        \item Resultionsbeweis
+        \item Modellieren
+    \end{itemize}
+
+    \subsection{Prädikatenlogik}
     \begin{itemize}
         \item Ankreuzaufgaben richtig/falsch
         \item Angeben ob Formeln erfüllbar/unerfüllbar/allgmeingültig (mit Beweis)
